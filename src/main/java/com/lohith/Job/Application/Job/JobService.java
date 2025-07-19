@@ -1,4 +1,12 @@
 package com.lohith.Job.Application.Job;
 
-public class JobService {
+import java.util.List;
+
+public interface JobService {
+
+    List<Job> findAll();
+    Job findJobById(Long id);
+    void  save(Job job);
+    boolean Update(Long id,Job job);
+    boolean delete(Long id);
 }
