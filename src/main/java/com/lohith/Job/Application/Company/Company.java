@@ -2,6 +2,7 @@ package com.lohith.Job.Application.Company;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.lohith.Job.Application.Job.Job;
+import com.lohith.Job.Application.Reviews.Review;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,5 +25,8 @@ public class Company {
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "company")
     @JsonIgnore
     private List<Job> jobs;
+
+    @OneToMany(mappedBy = "company")
+    private List<Review> reviews;
 
 }

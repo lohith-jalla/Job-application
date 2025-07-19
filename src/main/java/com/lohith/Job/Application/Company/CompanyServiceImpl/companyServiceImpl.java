@@ -52,7 +52,7 @@ public class companyServiceImpl implements CompanyService {
     }
 
     @Override
-    public Company getCompanyBuId(Long id) {
+    public Company getCompanyById(Long id) {
         return companyRepository.findById(id).orElse(null);
     }
 
@@ -64,5 +64,10 @@ public class companyServiceImpl implements CompanyService {
         }catch(Exception e){
             return false;
         }
+    }
+
+    @Override
+    public void save(Company company) {
+        companyRepository.save(company);
     }
 }
